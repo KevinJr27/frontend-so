@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         booksContainer.innerHTML = "";
 
         try {
-            const res = await fetch("http://localhost:5000/books/");
+            const res = await fetch("http://backend-kevin:5000/books/");
             const books = await res.json();
 
             books.forEach(book => {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const footerMessage = document.getElementById("footer-message");
 
         try {
-            const res = await fetch("http://localhost:5000/morales-perez");
+            const res = await fetch("http://backend-kevin:5000/morales-perez");
             if (!res.ok) throw new Error("Error al obtener el mensaje");
             const text = await res.text(); // El endpoint devuelve texto plano
             footerMessage.textContent = text;
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Eliminar libro
     async function deleteBook(bookId) {
         try {
-            const res = await fetch(`http://localhost:5000/books/${bookId}`, {
+            const res = await fetch(`http://backend-kevin:5000/books/${bookId}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" }
             });
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         try {
-            const res = await fetch("http://localhost:5000/books", {
+            const res = await fetch("http://backend-kevin:5000/books/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newBook)
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         try {
-            const res = await fetch(`http://localhost:5000/books/${currentEditId}`, {
+            const res = await fetch(`http://backend-kevin:5000/books/${currentEditId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedBook)
