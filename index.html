@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="brand">
+            <i class="fa-solid fa-book"></i> Ceniza y papel
+        </div>
+
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Buscar..." />
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="menu" id="menu">
+            <a href="#"><i class="fa fa-home"></i> Inicio</a>
+            <a href="#"><i class="fa-solid fa-box"></i> Pedidos</a>
+            <a href="#"><i class="fa-solid fa-book-open"></i> Acerca de</a>
+            <div class="profile">
+                <a href="#"><i class="fa-solid fa-user"></i><span>Alejandro</span></a>
+                <div class="dropdown">
+                    <a href="#"><i class="fa fa-user"></i> Perfil</a>
+                    <a href="#"><i class="fa fa-calendar"></i> Calendario</a>
+                    <a href="#"><i class="fa fa-sliders"></i> Configuración</a>
+                    <a href="#"><i class="fa fa-sign-out"></i> Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="inspiration-section">
+        <div class="inspiration-content">
+            <div class="inspiration-image">
+                <img src="/images/filosofy.jpg" alt="Lectura inspiradora">
+            </div>
+            <div class="inspiration-text">
+                <h2>"Un libro es un sueño que tienes en tus manos".</h2>
+                <p>
+                    La lectura es una puerta hacia mundos infinitos. Nos permite escapar, aprender, reflexionar y
+                    crecer.
+                    Cada página es una nueva oportunidad para entender mejor la vida, a los demás y a nosotros mismos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="library-container">
+        <div class="library-header">
+            <h2 id="main-title">Mi biblioteca</h2>
+
+            <div class="library-controls">
+                <div class="library-filters">
+                    <label for="filter-select">Filtrar libros por:</label>
+                    <select id="filter-select">
+                        <option value="">Seleccionar</option>
+                        <option value="autor">Autor</option>
+                    </select>
+                </div>
+
+                <button class="add-book-btn">
+                    Agregar libro
+                </button>
+            </div>
+        </div>
+        <div class="recent-section">
+            <h3>Libros</h3>
+            <div class="books">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para guardar libro -->
+    <div id="addBookModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>Formulario para agregar un libro</h3>
+            <form id="addBookForm">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" required />
+                </div>
+                <div class="form-group">
+                    <label for="author">Autor:</label>
+                    <input type="text" id="author" name="author" required />
+                </div>
+                <div class="form-group">
+                    <label for="year">Año:</label>
+                    <input type="number" id="year" name="year" min="0" required />
+                </div>
+                <button type="submit" class="submit-btn">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para editar libro -->
+    <div id="editBookModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" id="closeEditModal">&times;</span>
+            <h3>Editar libro</h3>
+            <form id="editBookForm">
+                <div class="form-group">
+                    <label for="editTitle">Título:</label>
+                    <input type="text" id="editTitle" name="editTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="editAuthor">Autor:</label>
+                    <input type="text" id="editAuthor" name="editAuthor" required />
+                </div>
+                <div class="form-group">
+                    <label for="editYear">Año:</label>
+                    <input type="number" id="editYear" name="editYear" min="0" required />
+                </div>
+                <button type="submit" class="submit-btn">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p id="footer-message">Cargando mensaje...</p>
+        </div>
+    </footer>
+
+
+    <script src="src/script.js"></script>
+</body>
+
+</html>
